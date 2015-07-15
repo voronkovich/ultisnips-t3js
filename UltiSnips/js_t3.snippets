@@ -1,0 +1,37 @@
+priority -50
+
+snippet t3module "t3.js module" b
+Box.Application.addModule('${1:moduleID}', function(context) {
+
+	'use strict';
+
+	return {
+		${0}
+	};
+});
+endsnippet
+
+snippet t3service "t3.js service" b
+Box.Application.addService('serviceID', function(application) {
+
+	'use strict';
+
+	return {
+		${0}
+	};
+});
+endsnippet
+
+snippet t3on "t3.js event listener" b
+Box.Application.on('${1:event}', function(event) {
+	${0}
+});
+endsnippet
+
+snippet t3onerror "t3.js error event listener" b
+Box.Application.on('error', function(event) {
+    var exception = event.exception;
+
+	${0}
+});
+endsnippet
