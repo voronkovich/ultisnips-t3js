@@ -1,7 +1,7 @@
 priority -50
 
 snippet t3module "t3.js module" b
-Box.Application.addModule('${1:moduleID}', function(context) {
+Box.Application.addModule('${1:`!v expand('%:t:r')`}', function(context) {
 
 	'use strict';
 
