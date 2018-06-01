@@ -1,6 +1,10 @@
 priority -50
 
-snippet t3module "t3.js module" b
+snippet t3 "t3js Box.Application instance" w
+Box.Application
+endsnippet
+
+snippet t3module "t3js module" b
 Box.Application.addModule('${1:`!v expand('%:t:r')`}', function(context) {
 
 	'use strict';
@@ -11,8 +15,8 @@ Box.Application.addModule('${1:`!v expand('%:t:r')`}', function(context) {
 });
 endsnippet
 
-snippet t3service "t3.js service" b
-Box.Application.addService('serviceID', function(application) {
+snippet t3behavior "t3js behavior" b
+Box.Application.addBehavior('${1:`!v expand('%:t:r')`}', function(context) {
 
 	'use strict';
 
@@ -22,10 +26,41 @@ Box.Application.addService('serviceID', function(application) {
 });
 endsnippet
 
-snippet t3on "t3.js event listener" b
-Box.Application.on('${1:event}', function(event) {
-	${0}
+snippet t3service "t3js service" b
+Box.Application.addService('${1:`!v expand('%:t:r')`}', function(application) {
+
+	'use strict';
+
+	return {
+		${0}
+	};
 });
+endsnippet
+
+snippet t3init "t3js init module/behavior" b
+init: function() {
+	${0}
+}
+endsnippet
+
+snippet t3destroy "t3js destroy module/behavior" b
+destroy: function() {
+	${0}
+}
+endsnippet
+
+snippet t3onmessage "t3js onmessage"
+onmessage: {
+	${1:message}: function(data) {
+		${0}
+	}
+}
+endsnippet
+
+snippet t3on "t3js module/behavior event listener" b
+on${1:click}: function(event, element, elementType) {
+	${0}
+}
 endsnippet
 
 snippet t3onerror "t3.js error event listener" b
